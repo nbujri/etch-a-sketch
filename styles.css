@@ -8,4 +8,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 24px;
+}
+
+.grid-container {
+  border: 1px solid black;
+  width: 960px;
+  height: 960px;
+  margin: 100px auto;
+  display: grid;
+}
+
+.item {
+  background-color: white;
+  border: 1px solid black;
 }
