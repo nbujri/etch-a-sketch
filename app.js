@@ -1,4 +1,8 @@
 const gridContainer = document.querySelector('.grid-container');
+const drawBtn = document.querySelector('.draw-btn');
+const clearBtn = document.querySelector('.clear-btn');
+const eraseBtn = document.querySelector('.eraser-btn');
+let drawActive = true;
 
 // generate dynamic grid of divs based on two inputs
 function generateGrid(size) {
@@ -24,7 +28,15 @@ function checkSize(size) {
 }
 
 function draw(e) {
-    e.target.classList.add('draw');
+    if (drawActive) {
+        e.target.classList.add('draw');
+    } else {
+        e.target.classList.remove('draw');
+    }
+}
+
+function clearGrid() {
+    items.forEach(item => item.classList.remove('draw'));
 }
 
 checkSize(16)
@@ -32,4 +44,14 @@ checkSize(16)
 const items = document.querySelectorAll('.item');
 
 items.forEach(item => item.addEventListener('mouseover', draw))
+clearBtn.addEventListener('click', clearGrid);
+drawBtn.addEventListener('click', function() {
+    drawActive = true;
+    console.log(drawActive);
+})
+eraseBtn.addEventListener('click', function() {
+    drawActive = false;
+    console.log(drawActive);
+})
+
 
