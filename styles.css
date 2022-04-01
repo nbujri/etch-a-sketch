@@ -20,10 +20,19 @@
 
 .grid-container {
   border: 1px solid black;
-  width: 960px;
-  height: 960px;
-  margin: 100px auto;
+  width: 720px;
+  height: 720px;
+  margin: 50px auto;
   display: grid;
+}
+
+h3, 
+.slide-container,
+.slider-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .item {
