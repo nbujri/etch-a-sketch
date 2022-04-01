@@ -11,6 +11,13 @@
   margin-top: 24px;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
 .grid-container {
   border: 1px solid black;
   width: 960px;
@@ -26,4 +33,14 @@
 
 .draw {
   background-color: black;
+}
+
+.clear,
+.eraser {
+  font-size: 24px;
+  padding: 5px 10px;
+}
+
+.clear {
+  margin-right: 20px;
 }
