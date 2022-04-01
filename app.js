@@ -23,14 +23,13 @@ function checkSize(size) {
     }
 }
 
+function draw(e) {
+    e.target.classList.add('draw');
+}
+
 checkSize(16)
 
 const items = document.querySelectorAll('.item');
 
-items.forEach(item => item.addEventListener('mouseover', function(e) {
-    e.target.classList.add('hover');
-}))
+items.forEach(item => item.addEventListener('mouseover', draw))
 
-items.forEach(item => item.addEventListener('mouseout', function(e) {
-    e.target.classList.remove('hover');
-}))
