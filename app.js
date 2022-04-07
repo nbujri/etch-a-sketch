@@ -7,9 +7,12 @@ const sliderValue = document.querySelector('.slider-value');
 defaultSize = 16;
 sizeSlider.value = defaultSize;
 let drawActive = true;
+let mouseDown = false;
 
 function generateGrid() {
     setGridSize(defaultSize);
+    const items = document.querySelectorAll('.item');
+    items.forEach(item => item.addEventListener('mouseover', draw));
 }
 
 // generate dynamic grid of divs based on two inputs
@@ -26,9 +29,9 @@ function setGridSize(size) {
 }
 
 function draw(e) {
-    if (drawActive) {
+    if (drawActive && mouseDown) {
         e.target.classList.add('draw');
-    } else {
+    } else if (!drawActive && mouseDown) {
         e.target.classList.remove('draw');
     }
 }
@@ -54,10 +57,6 @@ function updateGrid() {
 
 generateGrid();
 
-const items = document.querySelectorAll('.item');
-
-items.forEach(item => item.addEventListener('mouseover', draw));
-
 clearBtn.addEventListener('click', clearGrid);
 
 drawBtn.addEventListener('click', function() {
@@ -77,6 +76,16 @@ sizeSlider.addEventListener('input', function(e) {
 sizeSlider.addEventListener('change', function() {
     updateGrid();
 });
+
+gridContainer.addEventListener('mousedown', (e) => {
+    // prevent dragging of grid
+    e.preventDefault();
+    mouseDown = true;
+})
+
+gridContainer.addEventListener('mouseup', (e) => {
+    mouseDown = false;
+})
 
 sliderValue.textContent = sizeSlider.value;
 
