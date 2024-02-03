@@ -23,3 +23,12 @@ function generateGrid(height, width) {
 
 // when mouse cursor hovers over a cell
 // change the cell color
+
+const cells = document.querySelectorAll(".cell");
+cells.forEach((cell) => {
+  cell.addEventListener("mouseover", () => {
+    // toggle color class only for elements that do not
+    // have the class to prevent "erasing"
+    if (!cell.classList.contains("color")) cell.classList.toggle("color");
+  });
+});
