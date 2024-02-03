@@ -6,7 +6,7 @@ let gridHeight = 64;
 let gridWidth = gridHeight;
 let gridSize = gridHeight * gridWidth;
 
-window.onload(generateGrid(gridHeight, gridWidth));
+window.addEventListener("load", generateGrid(gridHeight, gridWidth));
 
 function generateGrid(height, width) {
   for (let h = 0; h < height; h++) {
