@@ -6,6 +6,8 @@ let gridHeight = 64;
 let gridWidth = gridHeight;
 let gridSize = gridHeight * gridWidth;
 
+window.onload(generateGrid(gridHeight, gridWidth));
+
 function generateGrid(height, width) {
   for (let h = 0; h < height; h++) {
     const column = document.createElement("div");
@@ -18,8 +20,6 @@ function generateGrid(height, width) {
     }
   }
 }
-
-generateGrid(gridHeight, gridWidth);
 
 // when mouse cursor hovers over a cell
 // change the cell color
