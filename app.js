@@ -2,8 +2,8 @@
 // grid size can be changed
 // limit size to 100x100
 const grid = document.querySelector(".grid");
-let gridHeight = 16;
-let gridWidth = 16;
+let gridHeight = 64;
+let gridWidth = gridHeight;
 let gridSize = gridHeight * gridWidth;
 
 function generateGrid(height, width) {
