@@ -39,6 +39,8 @@ function generateGrid(size) {
 }
 
 // delete grid
+// must remove all children from .grid when calling generateGrid()
+// otherwise, we have more cells than we want
 function deleteGrid() {
   while (grid.firstChild) {
     grid.removeChild(grid.firstChild);
