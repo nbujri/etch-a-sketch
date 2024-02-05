@@ -5,8 +5,39 @@
 }
 
 body {
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.settings {
+  padding-right: 50px;
+}
+
+h1 {
+  padding: 20px 0;
+}
+
+.sliderDiv {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.applyBtn {
+  padding: 5px 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.applyBtn:hover {
+  background-color: #e4e4e4;
+  cursor: pointer;
 }
 
 .grid {
