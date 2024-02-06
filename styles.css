@@ -56,11 +56,6 @@ h1 {
 }
 
 .cell {
-  /* 
-    border for debugging
-    remove when done
-  */
-  border: 1px solid #000;
   flex: auto;
 }
 

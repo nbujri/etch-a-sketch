@@ -27,11 +27,11 @@ applyBtn.addEventListener("click", () => generateGrid(gridSize));
 function generateGrid(size) {
   deleteGrid();
 
-  for (let h = 0; h < gridSize; h++) {
+  for (let h = 0; h < size; h++) {
     const column = document.createElement("div");
     column.classList.add("column");
     grid.appendChild(column);
-    for (let w = 0; w < gridSize; w++) {
+    for (let w = 0; w < size; w++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
       cell.addEventListener("mouseover", draw);
