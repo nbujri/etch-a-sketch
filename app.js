@@ -3,6 +3,9 @@
 // limit size to 100x100
 const grid = document.querySelector(".grid");
 let gridSize = 16;
+// prevent drag & drop of grid
+grid.addEventListener("dragstart", (e) => e.preventDefault());
+grid.addEventListener("drop", (e) => e.preventDefault());
 
 window.addEventListener("load", generateGrid(gridSize));
 
