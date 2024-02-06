@@ -34,11 +34,11 @@ function generateGrid(size) {
     for (let w = 0; w < gridSize; w++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
+      cell.addEventListener("mouseover", draw);
+      cell.addEventListener("mousedown", draw);
       column.appendChild(cell);
     }
   }
-
-  draw();
 }
 
 // delete grid
@@ -50,16 +50,15 @@ function deleteGrid() {
   }
 }
 
-function draw() {
-  // when mouse cursor hovers over a cell
-  // change the cell color
+let isMouseDown = false;
+grid.addEventListener("mousedown", () => (isMouseDown = true));
+grid.addEventListener("mouseup", () => (isMouseDown = false));
 
-  const cells = document.querySelectorAll(".cell");
-  cells.forEach((cell) => {
-    cell.addEventListener("mouseover", () => {
-      // toggle color class only for elements that do not
-      // have the class to prevent "erasing"
-      if (!cell.classList.contains("color")) cell.classList.toggle("color");
-    });
-  });
+// toggles color class if mouse is down and hover over element
+function draw(e) {
+  if (e.type === "mouseover" && isMouseDown) {
+    if (!e.target.classList.contains("color")) {
+      e.target.classList.toggle("color");
+    } else return;
+  }
 }
